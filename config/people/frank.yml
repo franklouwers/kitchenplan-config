@@ -1,12 +1,19 @@
+groups:
+   - zsh
 recipes:
     mac_os_x:
+        - osxdefaults::save_to_disk_not_to_iCloud_by_default
+        #- osxdefaults::enable_subpixel_font_rendering_on_non-apple_lcds
+        - osxdefaults::enable_assistive_devices
         - osxdefaults::set_computer_name
-	- osxdefaults::finder_small_sidebar_icon_size
+        - osxdefaults::finder_small_sidebar_icon_size
         - osxdefaults::automatically_quit_printer_app_once_the_print_jobs_complete
         - osxdefaults::avoid_creating_ds_store_files_on_network_volumes
-	- osxdefaults::menu_add_battery_percentage
-	- osxdefaults::mail_copy_email_addresses_instead_of_names_in_mail
+        - osxdefaults::menu_add_battery_percentage
+        - osxdefaults::mail_copy_email_addresses_instead_of_names_in_mail
         - osxdefaults::finder_unhide_home
+        - osxdefaults::disable_auto-correct
+        - osxdefaults::enable_safari_debug_menu
     global:
         - dotfiles::gitconfig
         - dotfiles::vim
@@ -16,12 +23,26 @@ attributes:
     homebrewalt:
         apps:
             - wget
+            - whois
+            - mosh
         cask_apps:
+            - mou
             - dropbox
             - alfred
             - spotify
-	    - slack
+            - slack
             - hipchat
+            - shimo
+            - firefox
+            - vagrant
+            - charles
+#            - chefdk
+            - chruby
+            - ruby-build
+            - java
+            - eid-mw
+        cask_fonts:
+             - hack
     dotfiles:
       vim:
           bundle:
@@ -32,4 +53,7 @@ attributes:
                 - syntastic: git://github.com/scrooloose/syntastic.git
                 - nerdtree: https://github.com/scrooloose/nerdtree.git
                 - vim-css-color: https://github.com/ap/vim-css-color
+    git:
+          name: Frank Louwers
+          email: frank@openminds.be
 
