@@ -25,6 +25,9 @@ attributes:
             - wget
             - whois
             - mosh
+            - curl
+            - mtr
+            - autojump
         cask_apps:
             - mou
             - dropbox
